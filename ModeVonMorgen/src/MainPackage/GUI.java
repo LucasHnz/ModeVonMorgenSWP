@@ -25,6 +25,8 @@ import java.awt.SystemColor;
 
 public class GUI implements ActionListener {
 	
+	//String
+	
 	
 	public String[] damenCbList = {"Damen", "-----------------------------------", "Kleidung", "Schuhe", "Accessoires"};
 	public String[] herrenCbList = {"Herren","------------------------------------", "Kleidung", "Schuhe", "Accessoires"};
