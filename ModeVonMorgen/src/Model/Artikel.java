@@ -2,10 +2,24 @@ package Model;
 
 public abstract class Artikel {
 
-	private int Artikelnummer, Bestand;
-	private String Bezeichnung, Art, Geschlecht, Hersteller, Verfügbarkeit, Notiz;
-	private String[] Lieferanten;
-	private double Preis, Rabatt;
+	protected int Artikelnummer, Bestand;
+	protected String Bezeichnung, Art, Geschlecht, Hersteller, Verfügbarkeit, Notiz;
+	protected String[] Lieferanten;
+	protected double Preis, Rabatt;
+	
+	public Artikel(int artnr, int bestand, String Bezeichnung, String Geschlecht, String Hersteller, String Verfügbarkeit, String Notiz, String[]  Lieferanten, double Preis, double Rabatt) {
+
+		this.Artikelnummer=artnr;
+		this.Bestand=bestand;
+		this.Bezeichnung=Bezeichnung;
+		this.Geschlecht=Geschlecht;
+		this.Hersteller=Hersteller;
+		this.Verfügbarkeit=Verfügbarkeit;
+		this.Notiz=Notiz;
+		this.Lieferanten=Lieferanten;
+		this.Preis=Preis;
+		this.Rabatt=Rabatt;
+	}
 	
 	public int getArtikelnummer() {
 		return Artikelnummer;
