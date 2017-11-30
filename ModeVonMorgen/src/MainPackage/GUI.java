@@ -25,7 +25,7 @@ import java.awt.SystemColor;
 
 public class GUI implements ActionListener {
 	
-	//String
+	
 	
 	
 	public String[] damenCbList = {"Damen", "-----------------------------------", "Kleidung", "Schuhe", "Accessoires"};
@@ -36,14 +36,12 @@ public class GUI implements ActionListener {
 	public int rotierung = 1;
 	public String[] outfitsDamenListe = {"C:\\\\Users\\\\hinzl\\\\Desktop\\\\SWP-Bilder\\\\frau1.jpg","C:\\\\Users\\\\hinzl\\\\Desktop\\\\SWP-Bilder\\\\frau2.jpg"};
 	
-	public JButton btnOutfitDamenLinks = new JButton();
-	public JButton btnOutfitDamenRechts = new JButton();
-	public JButton btnOutfitHerrenLinks = new JButton();
-	public JButton btnOutfitHerrenRechts= new JButton();
-	public JButton btnOutfitDamen = new JButton();
-	private JButton btnProduktDamen;
-	public JButton btnOutfitHerren = new JButton();
-	private JButton btnProduktHerren;
+	public JButton btnProduktDamenLinks = new JButton();
+	public JButton btnProduktDamenRechts = new JButton();
+	public JButton btnProduktHerrenLinks = new JButton();
+	public JButton btnProduktHerrenRechts= new JButton();
+	public JButton btnProduktDamen;
+	public JButton btnProduktHerren;
 	public JLabel labelMainDamen = new JLabel();
 	public JLabel labelMainHerren = new JLabel();
 	public JComboBox comboBoxHerren = new JComboBox();
@@ -178,29 +176,29 @@ public class GUI implements ActionListener {
 		btnProduktHerren.addActionListener(this);
 		panelMain.add(btnProduktHerren);
 		
-		btnOutfitDamenRechts = new JButton(">");
-		btnOutfitDamenRechts.setBackground(Color.WHITE);
-		btnOutfitDamenRechts.setBounds(483, 191, 41, 70);
-		btnOutfitDamenRechts.addActionListener(this);
-		panelMain.add(btnOutfitDamenRechts);
+		btnProduktDamenRechts = new JButton(">");
+		btnProduktDamenRechts.setBackground(Color.WHITE);
+		btnProduktDamenRechts.setBounds(483, 191, 41, 70);
+		btnProduktDamenRechts.addActionListener(this);
+		panelMain.add(btnProduktDamenRechts);
 		
-		btnOutfitDamenLinks = new JButton("<");
-		btnOutfitDamenLinks.setBackground(Color.WHITE);
-		btnOutfitDamenLinks.setBounds(144, 191, 41, 70);
-		btnOutfitDamenLinks.addActionListener(this);
-		panelMain.add(btnOutfitDamenLinks);
+		btnProduktDamenLinks = new JButton("<");
+		btnProduktDamenLinks.setBackground(Color.WHITE);
+		btnProduktDamenLinks.setBounds(144, 191, 41, 70);
+		btnProduktDamenLinks.addActionListener(this);
+		panelMain.add(btnProduktDamenLinks);
 		
-		btnOutfitHerrenRechts = new JButton(">");
-		btnOutfitHerrenRechts.setBackground(Color.WHITE);
-		btnOutfitHerrenRechts.setBounds(995, 191, 41, 70);
-		btnOutfitHerrenRechts.addActionListener(this);
-		panelMain.add(btnOutfitHerrenRechts);
+		btnProduktHerrenRechts = new JButton(">");
+		btnProduktHerrenRechts.setBackground(Color.WHITE);
+		btnProduktHerrenRechts.setBounds(995, 191, 41, 70);
+		btnProduktHerrenRechts.addActionListener(this);
+		panelMain.add(btnProduktHerrenRechts);
 		
-		btnOutfitHerrenLinks = new JButton("<");
-		btnOutfitHerrenLinks.setBackground(Color.WHITE);
-		btnOutfitHerrenLinks.setBounds(656, 191, 41, 70);
-		btnOutfitHerrenLinks.addActionListener(this);
-		panelMain.add(btnOutfitHerrenLinks);
+		btnProduktHerrenLinks = new JButton("<");
+		btnProduktHerrenLinks.setBackground(Color.WHITE);
+		btnProduktHerrenLinks.setBounds(656, 191, 41, 70);
+		btnProduktHerrenLinks.addActionListener(this);
+		panelMain.add(btnProduktHerrenLinks);
 		
 		
 		labelMainDamen = new JLabel();
@@ -244,22 +242,22 @@ public class GUI implements ActionListener {
 			
 		}
 		
-		if (e.getSource() == btnOutfitDamenRechts){
+		if (e.getSource() == btnProduktDamenRechts){
 			
 			wechselOutfitDamenRechts();
 		}
 		
-		if (e.getSource() == btnOutfitDamenLinks){
+		if (e.getSource() == btnProduktDamenLinks){
 			
 			wechselOutfitDamenLinks();
 		}
 		
-		if (e.getSource() == btnOutfitHerrenRechts){
+		if (e.getSource() == btnProduktHerrenRechts){
 			
 			wechselOutfitHerrenRechts();
 		}
 		
-		if (e.getSource() == btnOutfitHerrenLinks){
+		if (e.getSource() == btnProduktHerrenLinks){
 			
 			wechselOutfitHerrenLinks();
 		}
