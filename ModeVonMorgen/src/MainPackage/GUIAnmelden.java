@@ -16,6 +16,8 @@ public class GUIAnmelden implements ActionListener {
 	JButton btnAnmeldenAbbrechen = new JButton("Abbrechen");
 	String testEmail = "jochen.kuester@fh-bielefeld.de";
 	String testPasswort = "12345678";
+	String testPwMitarbeiter = "123";
+	String testMailMitarbeiter = "test";
 	String[] anmeldenCbList;
 
 	private JFrame frame;
@@ -76,6 +78,11 @@ public class GUIAnmelden implements ActionListener {
 				new GUI(anmeldenCbList);
 				frame.dispose();
 				
+			}if(anmeldenEmail.getText().equals(testMailMitarbeiter) && pwd.equals(testPwMitarbeiter)) {
+				GUI.fensterSchlieﬂen();
+				anmeldenCbList[0] = "Mitarbeiter";
+				new GUIMitarbeiter(anmeldenCbList);
+				frame.dispose();
 			}
 			
 			
