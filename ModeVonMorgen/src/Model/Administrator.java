@@ -1,12 +1,12 @@
 package Model;
 
-public class Adminsitrator extends Nutzer{
+public class Administrator extends Nutzer{
 	
 	protected int gehalt;
 	protected String iban, passwort;
 	
 	
-	public Adminsitrator(String vorname, String nachname, String straﬂe, int plz, String ort, int berechtigung, String email, int nutzernr, int gehalt, String iban, String passwort){
+	public Administrator(String vorname, String nachname, String straﬂe, int plz, String ort, int berechtigung, String email, int nutzernr, int gehalt, String iban, String passwort){
 		super(vorname, nachname, straﬂe, plz, ort, berechtigung, email, nutzernr);
 		this.gehalt = gehalt;
 		this.iban = iban;
