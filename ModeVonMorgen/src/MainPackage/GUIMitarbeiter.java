@@ -27,9 +27,12 @@ public class GUIMitarbeiter implements ActionListener{
 	private JComboBox comboBoxErweitert;
 	public JComboBox comboBoxArtikelDamen = new JComboBox();
 	public JComboBox comboBoxAnmelden = new JComboBox();
+	public JPanel panelEinstellungen = new JPanel();
 	public String[] anmeldenCbList;
 	public String[] damenCbList = {"Damen", "-----------------------------------", "Kleidung", "Schuhe", "Accessoires"};
 	public String[] herrenCbList = {"Herren","------------------------------------", "Kleidung", "Schuhe", "Accessoires"};
+	
+
 
 	private JFrame frame;
 
@@ -113,7 +116,7 @@ public class GUIMitarbeiter implements ActionListener{
 		scrollPaneArtikel.setBounds(10, 97, 270, 455);
 		panelMain.add(scrollPaneArtikel);
 		
-		JPanel panelEinstellungen = new JPanel();
+		//JPanel panelEinstellungen = new JPanel();
 		JScrollPane scrollPaneEinstellungen = new JScrollPane(panelEinstellungen);
 		scrollPaneEinstellungen.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		panelEinstellungen.setLayout(null);
@@ -146,6 +149,41 @@ public class GUIMitarbeiter implements ActionListener{
 		frame.setVisible(true);
 	}
 	
+	public void hinzufügenArtikel() {
+		
+		System.out.println("HINZ");
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(66, 30, 540, 188);
+		panel.setLayout(null);
+		
+		JLabel lblBild = new JLabel();
+		lblBild.setVerticalAlignment(SwingConstants.TOP);
+		lblBild.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBild.setIcon(new ImageIcon("C:\\Users\\hinzl\\Desktop\\SWP-Bilder\\mann_jacke1.jpg"));
+		lblBild.setBounds(33, 25, 133, 135);
+		
+		JLabel lblTitel = new JLabel("Jacke");
+		lblTitel.setFont(new Font("Lucida Bright", Font.BOLD, 17));
+		lblTitel.setBounds(193, 25, 213, 30);
+		
+		JLabel lblPreis = new JLabel("Preis: 24\u20AC");
+		lblPreis.setFont(new Font("Lucida Bright", Font.BOLD, 15));
+		lblPreis.setBounds(432, 147, 84, 30);
+		
+		JLabel lblGroeße = new JLabel("Gr\\u00F6\\u00DFe: 32");
+		lblGroeße.setFont(new Font("Lucida Bright", Font.BOLD, 15));
+		lblGroeße.setBounds(203, 66, 84, 30);
+		
+		panel.add(lblBild);
+		panel.add(lblTitel);
+		panel.add(lblPreis);
+		panel.add(lblGroeße);
+		panelEinstellungen.add(panel);
+		
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
@@ -156,10 +194,10 @@ public class GUIMitarbeiter implements ActionListener{
 		}
 		if(e.getSource() == comboBoxArtikelDamen){
 			
-			String auswahl = (String) comboBoxErweitert.getSelectedItem();
+			String auswahl = (String) comboBoxArtikelDamen.getSelectedItem();
 		    
 			if(auswahl == "Kleidung"){
-				
+				hinzufügenArtikel();
 			 
 		    }
 		  
@@ -176,7 +214,7 @@ public class GUIMitarbeiter implements ActionListener{
 		
 		if(e.getSource() == comboBoxArtikelHerren){
 			
-			String auswahl = (String) comboBoxErweitert.getSelectedItem();
+			String auswahl = (String) comboBoxArtikelHerren.getSelectedItem();
 		    
 			if(auswahl == "Kleidung"){
 				
