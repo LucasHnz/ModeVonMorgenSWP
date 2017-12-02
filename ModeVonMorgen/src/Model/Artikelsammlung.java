@@ -19,5 +19,6 @@ public class Artikelsammlung {
 	public Artikel[] getArtikelArray(String Filter) {
 		Artikel[] a = new Artikel[Artikelsammlung.size()];
 		a = (Artikel[]) Artikelsammlung.values().toArray();
+		return a;
 	}
 }
