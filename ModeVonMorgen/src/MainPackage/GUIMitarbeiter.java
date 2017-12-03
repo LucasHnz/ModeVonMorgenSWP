@@ -31,6 +31,7 @@ public class GUIMitarbeiter implements ActionListener{
 	public String[] anmeldenCbList;
 	public String[] damenCbList = {"Damen", "-----------------------------------", "Kleidung", "Schuhe", "Accessoires"};
 	public String[] herrenCbList = {"Herren","------------------------------------", "Kleidung", "Schuhe", "Accessoires"};
+	public int abstandsZahl = 170;
 	
 
 
@@ -101,25 +102,29 @@ public class GUIMitarbeiter implements ActionListener{
 		
 		JScrollPane scrollPaneArtikel = new JScrollPane(panelScrollPaneBar);
 		
-		JComboBox comboBoxArtikelDamen = new JComboBox(damenCbList);
+		comboBoxArtikelDamen = new JComboBox(damenCbList);
 		comboBoxArtikelDamen.setBackground(SystemColor.control);
 		comboBoxArtikelDamen.setFont(new Font("Lucida Bright", Font.BOLD, 15));
 		comboBoxArtikelDamen.setBounds(10, 86, 248, 43);
 		panelScrollPaneBar.add(comboBoxArtikelDamen);
 		
-		JComboBox comboBoxArtikelHerren = new JComboBox(herrenCbList);
+		comboBoxArtikelHerren = new JComboBox(herrenCbList);
 		comboBoxArtikelHerren.setBackground(SystemColor.control);
 		comboBoxArtikelHerren.setFont(new Font("Lucida Bright", Font.BOLD, 15));
+		comboBoxArtikelHerren.addActionListener(this);
 		comboBoxArtikelHerren.setBounds(10, 236, 248, 43);
 		panelScrollPaneBar.add(comboBoxArtikelHerren);
+		
 		scrollPaneArtikel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPaneArtikel.setBounds(10, 97, 270, 455);
 		panelMain.add(scrollPaneArtikel);
 		
-		//JPanel panelEinstellungen = new JPanel();
+
 		JScrollPane scrollPaneEinstellungen = new JScrollPane(panelEinstellungen);
-		scrollPaneEinstellungen.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		scrollPaneEinstellungen.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		panelEinstellungen.setLayout(null);
+		
+		
 		scrollPaneEinstellungen.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPaneEinstellungen.setBounds(343, 97, 549, 455);
 		panelMain.add(scrollPaneEinstellungen);
@@ -149,38 +154,105 @@ public class GUIMitarbeiter implements ActionListener{
 		frame.setVisible(true);
 	}
 	
-	public void hinzuf¸genArtikel() {
+	public void anzeigenArtikel() {
 		
-		System.out.println("HINZ");
+		System.out.println("anzeige");
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(66, 30, 540, 188);
+		panel.setBounds(22, 50, 470, 146);
+		panelEinstellungen.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblBild = new JLabel();
+		JLabel lblBild = new JLabel("");
+		lblBild.setBounds(10, 11, 124, 124);
 		lblBild.setVerticalAlignment(SwingConstants.TOP);
 		lblBild.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBild.setIcon(new ImageIcon("C:\\Users\\hinzl\\Desktop\\SWP-Bilder\\mann_jacke1.jpg"));
-		lblBild.setBounds(33, 25, 133, 135);
+		panel.add(lblBild);
 		
 		JLabel lblTitel = new JLabel("Jacke");
+		lblTitel.setBounds(167, 11, 242, 28);
 		lblTitel.setFont(new Font("Lucida Bright", Font.BOLD, 17));
-		lblTitel.setBounds(193, 25, 213, 30);
-		
-		JLabel lblPreis = new JLabel("Preis: 24\u20AC");
-		lblPreis.setFont(new Font("Lucida Bright", Font.BOLD, 15));
-		lblPreis.setBounds(432, 147, 84, 30);
-		
-		JLabel lblGroeﬂe = new JLabel("Gr\\u00F6\\u00DFe: 32");
-		lblGroeﬂe.setFont(new Font("Lucida Bright", Font.BOLD, 15));
-		lblGroeﬂe.setBounds(203, 66, 84, 30);
-		
-		panel.add(lblBild);
 		panel.add(lblTitel);
-		panel.add(lblPreis);
+		
+		JLabel lblGroeﬂe = new JLabel("Grˆﬂe: 34");
+		lblGroeﬂe.setBounds(167, 50, 78, 32);
+		lblGroeﬂe.setFont(new Font("Lucida Bright", Font.BOLD, 15));
 		panel.add(lblGroeﬂe);
+		
+		JLabel lblPreis = new JLabel("34Ä");
+		lblPreis.setBounds(402, 107, 58, 28);
+		lblPreis.setFont(new Font("Lucida Bright", Font.BOLD, 15));
+		panel.add(lblPreis);
+		
+		
+		
+		JPanel panel2 = new JPanel();
+		panel2.setBackground(Color.WHITE);
+		panel2.setBounds(22, (50 + abstandsZahl), 470, 146);
+		panelEinstellungen.add(panel2);
+		panel2.setLayout(null);
+		
+		JLabel lblBild2 = new JLabel("");
+		lblBild2.setBounds(10, 11, 124, 124);
+		lblBild2.setVerticalAlignment(SwingConstants.TOP);
+		lblBild2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBild2.setIcon(new ImageIcon("C:\\Users\\hinzl\\Desktop\\SWP-Bilder\\mann_jacke1.jpg"));
+		panel2.add(lblBild2);
+		
+		JLabel lblTitel2 = new JLabel("Jacke");
+		lblTitel2.setBounds(167, 11, 242, 28);
+		lblTitel2.setFont(new Font("Lucida Bright", Font.BOLD, 17));
+		panel2.add(lblTitel2);
+		
+		JLabel lblGroeﬂe2 = new JLabel("Grˆﬂe: 34");
+		lblGroeﬂe2.setBounds(167, 50, 78, 32);
+		lblGroeﬂe2.setFont(new Font("Lucida Bright", Font.BOLD, 15));
+		panel2.add(lblGroeﬂe2);
+		
+		JLabel lblPreis2 = new JLabel("34Ä");
+		lblPreis2.setBounds(402, 107, 58, 28);
+		lblPreis2.setFont(new Font("Lucida Bright", Font.BOLD, 15));
+		panel2.add(lblPreis2);
+	
+		abstandsZahl *= 2;
+		
+		JPanel panel3 = new JPanel();
+		panel3.setBackground(Color.WHITE);
+		panel3.setBounds(22, (50 + abstandsZahl), 470, 146);
+		panelEinstellungen.add(panel3);
+		panel3.setLayout(null);
+		
+		JLabel lblBild3 = new JLabel("");
+		lblBild3.setBounds(10, 11, 124, 124);
+		lblBild3.setVerticalAlignment(SwingConstants.TOP);
+		lblBild3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBild3.setIcon(new ImageIcon("C:\\Users\\hinzl\\Desktop\\SWP-Bilder\\mann_jacke1.jpg"));
+		panel3.add(lblBild3);
+		
+		JLabel lblTitel3 = new JLabel("Jacke");
+		lblTitel3.setBounds(167, 11, 242, 28);
+		lblTitel3.setFont(new Font("Lucida Bright", Font.BOLD, 17));
+		panel3.add(lblTitel3);
+		
+		JLabel lblGroeﬂe3 = new JLabel("Grˆﬂe: 34");
+		lblGroeﬂe3.setBounds(167, 50, 78, 32);
+		lblGroeﬂe3.setFont(new Font("Lucida Bright", Font.BOLD, 15));
+		panel3.add(lblGroeﬂe3);
+		
+		JLabel lblPreis3 = new JLabel("34Ä");
+		lblPreis3.setBounds(402, 107, 58, 28);
+		lblPreis3.setFont(new Font("Lucida Bright", Font.BOLD, 15));
+		panel3.add(lblPreis3);
+		
 		panelEinstellungen.add(panel);
+		panelEinstellungen.add(panel2);
+		panelEinstellungen.add(panel3);
+		panelEinstellungen.revalidate();
+		panelEinstellungen.repaint();
+
+
 		
 	}
 	
@@ -197,7 +269,7 @@ public class GUIMitarbeiter implements ActionListener{
 			String auswahl = (String) comboBoxArtikelDamen.getSelectedItem();
 		    
 			if(auswahl == "Kleidung"){
-				hinzuf¸genArtikel();
+			
 			 
 		    }
 		  
@@ -217,7 +289,7 @@ public class GUIMitarbeiter implements ActionListener{
 			String auswahl = (String) comboBoxArtikelHerren.getSelectedItem();
 		    
 			if(auswahl == "Kleidung"){
-				
+				anzeigenArtikel();
 			 
 		    }
 		  

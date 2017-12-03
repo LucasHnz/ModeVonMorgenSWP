@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 
-//Damit ich das Programm starten kann, musste ich die Klasse deaktivieren (bis kein Fehler mehr auftaucht)
 
 
 
