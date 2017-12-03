@@ -1,6 +1,7 @@
 package MainPackage;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.SystemColor;
@@ -112,6 +113,7 @@ public class GUIHerrenKleidung implements ActionListener{
 	
 		JScrollPane scrollPaneHerrenKleidung = new JScrollPane(panelHerrenKleidung);
 		scrollPaneHerrenKleidung.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		panelHerrenKleidung.setPreferredSize(new Dimension(549, 2000));
 		panelHerrenKleidung.setLayout(null);
 		scrollPaneHerrenKleidung.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPaneHerrenKleidung.setBounds(323, 97, 901, 455);
@@ -135,7 +137,7 @@ public class GUIHerrenKleidung implements ActionListener{
 		
 		JLabel lblSchwarzeJackeDenim = new JLabel("Schwarze Jacke DENIM");
 		lblSchwarzeJackeDenim.setFont(new Font("Lucida Bright", Font.BOLD, 17));
-		lblSchwarzeJackeDenim.setBounds(193, 25, 213, 30);
+		lblSchwarzeJackeDenim.setBounds(203, 11, 213, 30);
 		panelArtikel.add(lblSchwarzeJackeDenim);
 		
 		JLabel lblGre = new JLabel("Gr\u00F6\u00DFe: 32");
@@ -147,6 +149,12 @@ public class GUIHerrenKleidung implements ActionListener{
 		lblNewLabel.setFont(new Font("Lucida Bright", Font.BOLD, 15));
 		lblNewLabel.setBounds(432, 147, 84, 30);
 		panelArtikel.add(lblNewLabel);
+		
+		JButton btnZumArtikel = new JButton("Zum Artikel");
+		btnZumArtikel.setFont(new Font("Lucida Bright", Font.BOLD, 15));
+		btnZumArtikel.setBackground(Color.WHITE);
+		btnZumArtikel.setBounds(198, 130, 139, 30);
+		panelArtikel.add(btnZumArtikel);
 		
 		btnZurück = new JButton("Zur\u00FCck");
 		btnZurück.setFont(new Font("Lucida Bright", Font.BOLD, 15));
@@ -282,5 +290,4 @@ if(e.getSource() == comboBoxHerren){
 			}
 		}
 	}
-
 }

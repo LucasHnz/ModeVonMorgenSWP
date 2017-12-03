@@ -17,6 +17,8 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import java.awt.Component;
+import java.awt.Dimension;
+
 import javax.swing.JList;
 
 public class GUIMitarbeiter implements ActionListener{
@@ -32,6 +34,7 @@ public class GUIMitarbeiter implements ActionListener{
 	public String[] damenCbList = {"Damen", "-----------------------------------", "Kleidung", "Schuhe", "Accessoires"};
 	public String[] herrenCbList = {"Herren","------------------------------------", "Kleidung", "Schuhe", "Accessoires"};
 	public int abstandsZahl = 170;
+	public String[] mitarbeiterListe = {"Anna Gross", "Falk Maoro", "Bastian Walter", "Lucas Hinz"};
 	
 
 
@@ -45,6 +48,9 @@ public class GUIMitarbeiter implements ActionListener{
 		System.out.println("Ausgeführt HK");
 		this.anmeldenCbList = anmeldenCbList;
 		initialize(damenCbList, herrenCbList, anmeldenCbList);
+		for(int i = 0; i>= mitarbeiterListe.length; i++) {
+			
+		}
 		
 	}
 
@@ -90,46 +96,56 @@ public class GUIMitarbeiter implements ActionListener{
 		comboBoxAnmelden.addActionListener(this);
 		panelBar.add(comboBoxAnmelden);
 		
+		//Hauptfenster
 		JPanel panelMain = new JPanel();
 		panelMain.setBackground(Color.WHITE);
 		panelMain.setBounds(0, 147, 1234, 563);
 		frame.getContentPane().add(panelMain);
 		panelMain.setLayout(null);
 		
-		JPanel panelScrollPaneBar = new JPanel();
-		panelScrollPaneBar.setBackground(SystemColor.control);
-		panelScrollPaneBar.setLayout(null);
+		//Artikelfenster (Links)
+		JPanel panelScrollPaneArtikel = new JPanel();
+		panelScrollPaneArtikel.setBackground(SystemColor.control);
+		panelScrollPaneArtikel.setLayout(null);
 		
-		JScrollPane scrollPaneArtikel = new JScrollPane(panelScrollPaneBar);
+		JScrollPane scrollPaneArtikel = new JScrollPane(panelScrollPaneArtikel);
+		scrollPaneArtikel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPaneArtikel.setBounds(10, 97, 270, 455);
+		panelMain.add(scrollPaneArtikel);
+	
 		
 		comboBoxArtikelDamen = new JComboBox(damenCbList);
 		comboBoxArtikelDamen.setBackground(SystemColor.control);
 		comboBoxArtikelDamen.setFont(new Font("Lucida Bright", Font.BOLD, 15));
 		comboBoxArtikelDamen.setBounds(10, 86, 248, 43);
-		panelScrollPaneBar.add(comboBoxArtikelDamen);
+		panelScrollPaneArtikel.add(comboBoxArtikelDamen);
 		
 		comboBoxArtikelHerren = new JComboBox(herrenCbList);
 		comboBoxArtikelHerren.setBackground(SystemColor.control);
 		comboBoxArtikelHerren.setFont(new Font("Lucida Bright", Font.BOLD, 15));
 		comboBoxArtikelHerren.addActionListener(this);
 		comboBoxArtikelHerren.setBounds(10, 236, 248, 43);
-		panelScrollPaneBar.add(comboBoxArtikelHerren);
-		
-		scrollPaneArtikel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPaneArtikel.setBounds(10, 97, 270, 455);
-		panelMain.add(scrollPaneArtikel);
-		
+		panelScrollPaneArtikel.add(comboBoxArtikelHerren);
 
+		
+		
+		//Einstellungsfenster (Mitte)
+		
+		panelEinstellungen.setPreferredSize(new Dimension(549, 2000));
 		JScrollPane scrollPaneEinstellungen = new JScrollPane(panelEinstellungen);
 		scrollPaneEinstellungen.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		panelEinstellungen.setLayout(null);
+		
 		
 		
 		scrollPaneEinstellungen.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPaneEinstellungen.setBounds(343, 97, 549, 455);
 		panelMain.add(scrollPaneEinstellungen);
 		
+		
+		//Mitarbeiterfenster (Rechts)
 		JPanel panelMitarbeiter = new JPanel();
+		
 		JScrollPane scrollPaneMitarbeiter = new JScrollPane(panelMitarbeiter);
 		panelMitarbeiter.setLayout(null);
 		
