@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import Controller.LogStrg;
+
 public class GUIAnmelden implements ActionListener {
 	
 	JTextField anmeldenEmail = new JTextField();
@@ -59,6 +61,8 @@ public class GUIAnmelden implements ActionListener {
 	  
 	    frame.setVisible(true);
 	}
+	
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -67,27 +71,15 @@ public class GUIAnmelden implements ActionListener {
 			frame.dispose();
 		}
 		
-		if(e.getSource() == btnAnmeldenEinloggen) {
-			
-			String pwd = new String(anmeldenPasswort.getPassword());
-			
-			if(anmeldenEmail.getText().equals(testEmail) && pwd.equals( testPasswort)) {
-				System.out.println("GUI");
-				GUI.fensterSchlieﬂen();
-				anmeldenCbList[0] = "Jochen";
-				new GUI(anmeldenCbList);
-				frame.dispose();
+		
+		  if(e.getSource() == btnAnmeldenEinloggen) {
+		
+			  String pwd = new String(anmeldenPasswort.getPassword());
+			  String email = anmeldenEmail.getText();
+			  
+			  LogStrg.anmelden(pwd, email, anmeldenCbList);
+			  frame.dispose();
 				
-			}if(anmeldenEmail.getText().equals(testMailMitarbeiter) && pwd.equals(testPwMitarbeiter)) {
-				GUI.fensterSchlieﬂen();
-				anmeldenCbList[0] = "Mitarbeiter";
-				new GUIMitarbeiter(anmeldenCbList);
-				frame.dispose();
-			}
-			
-			
-		}
-		
-		
+		  }
 	}
 }
