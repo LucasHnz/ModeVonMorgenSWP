@@ -124,7 +124,7 @@ public class GUIHerrenKleidung implements ActionListener{
 		//Artikelbeispiel
 		JPanel panelArtikel = new JPanel();
 		panelArtikel.setBackground(Color.WHITE);
-		panelArtikel.setBounds(66, 30, 540, 188);
+		panelArtikel.setBounds(66, 30, 680, 188);
 		panelHerrenKleidung.add(panelArtikel);
 		panelArtikel.setLayout(null);
 		
@@ -136,18 +136,18 @@ public class GUIHerrenKleidung implements ActionListener{
 		panelArtikel.add(labelArtikelBild);
 		
 		JLabel lblSchwarzeJackeDenim = new JLabel("Schwarze Jacke DENIM");
-		lblSchwarzeJackeDenim.setFont(new Font("Lucida Bright", Font.BOLD, 17));
+		lblSchwarzeJackeDenim.setFont(new Font("Lucida Bright", Font.BOLD, 18));
 		lblSchwarzeJackeDenim.setBounds(203, 11, 213, 30);
 		panelArtikel.add(lblSchwarzeJackeDenim);
 		
 		JLabel lblGre = new JLabel("Gr\u00F6\u00DFe: 32");
 		lblGre.setFont(new Font("Lucida Bright", Font.BOLD, 15));
-		lblGre.setBounds(203, 66, 84, 30);
+		lblGre.setBounds(203, 51, 213, 30);
 		panelArtikel.add(lblGre);
 		
 		JLabel lblNewLabel = new JLabel("Preis: 24\u20AC");
 		lblNewLabel.setFont(new Font("Lucida Bright", Font.BOLD, 15));
-		lblNewLabel.setBounds(432, 147, 84, 30);
+		lblNewLabel.setBounds(569, 130, 101, 47);
 		panelArtikel.add(lblNewLabel);
 		
 		JButton btnZumArtikel = new JButton("Zum Artikel");
@@ -155,6 +155,12 @@ public class GUIHerrenKleidung implements ActionListener{
 		btnZumArtikel.setBackground(Color.WHITE);
 		btnZumArtikel.setBounds(198, 130, 139, 30);
 		panelArtikel.add(btnZumArtikel);
+		
+		JLabel lblStatus = new JLabel("Auf Lager");
+		lblStatus.setForeground(new Color(0, 204, 51));
+		lblStatus.setFont(new Font("Lucida Bright", Font.BOLD, 12));
+		lblStatus.setBounds(203, 82, 147, 25);
+		panelArtikel.add(lblStatus);
 		
 		btnZurück = new JButton("Zur\u00FCck");
 		btnZurück.setFont(new Font("Lucida Bright", Font.BOLD, 15));
