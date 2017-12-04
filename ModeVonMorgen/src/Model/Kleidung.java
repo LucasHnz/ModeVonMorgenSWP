@@ -1,5 +1,9 @@
 package Model;
-
+/**
+ * 
+ * @author maoro
+ *
+ */
 public class Kleidung extends Artikel {
 
 	private String Größe;

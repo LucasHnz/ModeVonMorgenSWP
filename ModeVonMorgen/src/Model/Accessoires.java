@@ -1,5 +1,9 @@
 package Model;
-
+/**
+ * 
+ * @author maoro
+ *
+ */
 public class Accessoires extends Artikel {
 
 	private String Farbe;

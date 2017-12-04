@@ -1,5 +1,9 @@
 package Model;
-
+/**
+ * 
+ * @author maoro
+ *
+ */
 public abstract class Artikel {
 
 	protected int Artikelnummer, Bestand;

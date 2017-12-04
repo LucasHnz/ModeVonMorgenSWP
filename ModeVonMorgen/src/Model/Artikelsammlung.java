@@ -4,16 +4,17 @@ package Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
-
+/**
+ * 
+ * @author maoro
+ *
+ */
 
 
 
 public class Artikelsammlung {
 
 	HashMap<Integer,Artikel> Artikelsammlung = new HashMap<Integer,Artikel>();
-	double a = 10;
-	double b = 10;
-	String[] test = {"88","88"};
 	
 	public Artikelsammlung() {	}
 	
@@ -57,5 +58,9 @@ public class Artikelsammlung {
 		Artikel[] a = new Artikel[Artikelsammlung.size()];
 		a = (Artikel[]) Artikelsammlung.values().toArray();
 		return a;
+	}
+	
+	public Artikel getArtikel(int Artikelnummer) {
+		return Artikelsammlung.get(Artikelnummer);
 	}
 }

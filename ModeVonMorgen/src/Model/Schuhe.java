@@ -1,5 +1,9 @@
 package Model;
-
+/**
+ * 
+ * @author maoro
+ *
+ */
 public class Schuhe extends Artikel {
 
 	public int Schuhgröße;
