@@ -24,7 +24,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 /**
  * 
- * @author maoro
+ * @author fmaoro
  *
  */
 public class GUINeuerArtikelFormular extends JFrame {
