@@ -29,6 +29,11 @@ import javax.swing.JComboBox;
  */
 public class GUINeuerArtikelFormular extends JFrame {
 
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -191,7 +196,7 @@ public class GUINeuerArtikelFormular extends JFrame {
 		label_1.setBounds(175, 375, 46, 14);
 		contentPane.add(label_1);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(87, 252, 202, 20);
 		contentPane.add(comboBox);
 		
