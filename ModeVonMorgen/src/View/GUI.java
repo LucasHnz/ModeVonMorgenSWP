@@ -1,6 +1,12 @@
-package MainPackage;
+package View;
 
 import java.awt.EventQueue;
+
+/**
+ * 
+ * @author Hinz
+ *
+ */
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -23,9 +29,10 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 
+
+
+
 public class GUI implements ActionListener {
-	
-	
 	
 	
 	public String[] damenCbList = {"Damen", "-----------------------------------", "Kleidung", "Schuhe", "Accessoires"};
@@ -87,9 +94,11 @@ public class GUI implements ActionListener {
 	{
 		new GUI();
 	}
+	
 	/**
 	 * Create the application.
 	 */
+	
 	public GUI() {
 		System.out.println("Ausgeführt Main");
 		initializeMain();

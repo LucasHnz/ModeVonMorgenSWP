@@ -1,4 +1,4 @@
-package MainPackage;
+package View;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -14,9 +14,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class GUIKontoBestellungen implements ActionListener{
+public class GUIDamenAccessoires implements ActionListener {
 	
 	JButton btnZurück = new JButton();
+	JButton btnAnmelden = new JButton();
 	public JComboBox comboBoxHerren = new JComboBox();
 	public JComboBox comboBoxDamen = new JComboBox();
 	public JComboBox comboBoxAnmelden = new JComboBox();
@@ -29,11 +30,13 @@ public class GUIKontoBestellungen implements ActionListener{
 	/**
 	 * Create the application.
 	 */
-	public GUIKontoBestellungen(String[]damenCbList, String[]herrenCbList, String[]anmeldenCbList) {
+	public GUIDamenAccessoires(String[]damenCbList, String[]herrenCbList, String[]anmeldenCbList) {
+		System.out.println("Ausgeführt DA");
 		this.damenCbList = damenCbList;
 		this.herrenCbList = herrenCbList;
 		this.anmeldenCbList = anmeldenCbList;
 		initialize(damenCbList, herrenCbList, anmeldenCbList);
+	
 	}
 
 	/**
@@ -100,15 +103,16 @@ public class GUIKontoBestellungen implements ActionListener{
 		
 		frame.setVisible(true);
 	}
-
+	
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		
+	public void actionPerformed(ActionEvent e)
+	{
 		if(e.getSource() == btnZurück) 
 		{
 			frame.dispose();
 			new GUI();
 		}
+		
 		if(e.getSource() == comboBoxHerren){
 			
 			String auswahl = (String) comboBoxHerren.getSelectedItem();
@@ -171,8 +175,6 @@ public class GUIKontoBestellungen implements ActionListener{
 			    new GUIKontoVerwalten(damenCbList, herrenCbList, anmeldenCbList);
 			}
 		}
-		
-		
 	}
 
 }
