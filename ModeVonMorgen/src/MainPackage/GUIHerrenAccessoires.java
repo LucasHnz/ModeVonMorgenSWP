@@ -1,4 +1,4 @@
-package View;
+package MainPackage;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class GUIHerrenSchuhe implements ActionListener {
+public class GUIHerrenAccessoires implements ActionListener{
 	
 	JButton btnZurück = new JButton();
 	JButton btnAnmelden = new JButton();
@@ -27,17 +27,16 @@ public class GUIHerrenSchuhe implements ActionListener {
 
 	private JFrame frame;
 
-
-
+	
 	/**
 	 * Create the application.
 	 */
-	public GUIHerrenSchuhe(String[]damenCbList, String[]herrenCbList,String[]anmeldenCbList) {
-		System.out.println("Ausgeführt HS");
+	public GUIHerrenAccessoires(String[]damenCbList, String[]herrenCbList, String[]anmeldenCbList) {
+		System.out.println("Ausgeführt HA");
 		this.damenCbList = damenCbList;
 		this.herrenCbList = herrenCbList;
 		this.anmeldenCbList = anmeldenCbList;
-		initialize(damenCbList, herrenCbList,anmeldenCbList);
+		initialize(damenCbList, herrenCbList, anmeldenCbList);
 		
 	}
 
@@ -68,6 +67,7 @@ public class GUIHerrenSchuhe implements ActionListener {
 		panelBar.setBounds(0, 98, 1234, 50);
 		frame.getContentPane().add(panelBar);
 		panelBar.setLayout(null);
+		
 		
 		comboBoxDamen = new JComboBox(damenCbList);
 		comboBoxDamen.setFont(new Font("Lucida Bright", Font.BOLD, 15));
@@ -114,7 +114,8 @@ public class GUIHerrenSchuhe implements ActionListener {
 			frame.dispose();
 			new GUI();
 		}
-if(e.getSource() == comboBoxHerren){
+		
+		if(e.getSource() == comboBoxHerren){
 			
 			String auswahl = (String) comboBoxHerren.getSelectedItem();
 		    

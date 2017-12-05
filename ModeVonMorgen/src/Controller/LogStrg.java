@@ -4,9 +4,9 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 
-import View.GUI;
-import View.GUIAnmelden;
-import View.GUIMitarbeiter;
+import MainPackage.GUI;
+import MainPackage.GUIAnmelden;
+import MainPackage.GUIMitarbeiter;
 
 public class LogStrg {
 	
