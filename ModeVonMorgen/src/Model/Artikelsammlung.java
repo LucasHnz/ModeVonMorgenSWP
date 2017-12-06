@@ -14,11 +14,11 @@ import java.util.HashMap;
 
 public class Artikelsammlung {
 
-	HashMap<Integer,Artikel> Artikelsammlung = new HashMap<Integer,Artikel>();
+	static HashMap<Integer,Artikel> Artikelsammlung = new HashMap<Integer,Artikel>();
 	
 	public Artikelsammlung() {	}
 	
-	public void füllenSammlung(ResultSet rs, String typ) {
+	public static void füllenSammlung(ResultSet rs, String typ) {
 		try{
 			while(rs.next()){
 		
@@ -53,14 +53,27 @@ public class Artikelsammlung {
 		}
 	}
 	
-	public Artikel[] getArtikelArray(String Filter) {
+	public static Artikel[] getArtikelArray(String Filter) {
 	 
 		Artikel[] a = new Artikel[Artikelsammlung.size()];
 		a = (Artikel[]) Artikelsammlung.values().toArray();
 		return a;
 	}
 	
-	public Artikel getArtikel(int Artikelnummer) {
+	public static Artikel getArtikel(int Artikelnummer) {
 		return Artikelsammlung.get(Artikelnummer);
 	}
+	public static void hinzufügenArtikel(String typ, int Artikelnummer, int Bestand, String Bezeichnung, String Geschlecht,
+			String Hersteller, String Verfügbarkeit, String Notiz, String[] Lieferanten, double Preis,
+			double Rabatt, int Schuhgröße, String Farbe, String Größe) {
+		Artikel artikel;
+		if(typ == "Schuhe")
+			artikel = new Schuhe(Artikelnummer, Bestand, Bezeichnung, Geschlecht, Hersteller, Verfügbarkeit, Notiz, Lieferanten, Preis, Rabatt, Schuhgröße);
+		else if(typ == "Accessoires")
+			artikel = new Accessoires(Artikelnummer, Bestand, Bezeichnung, Geschlecht, Hersteller, Verfügbarkeit, Notiz, Lieferanten, Preis, Rabatt, Farbe);
+		else 
+			artikel = new Kleidung(Artikelnummer, Bestand, Bezeichnung, Geschlecht, Hersteller, Verfügbarkeit, Notiz, Lieferanten, Preis, Rabatt, Größe);
+		Artikelsammlung.put(Artikelnummer, artikel);
+	}
 }
+
