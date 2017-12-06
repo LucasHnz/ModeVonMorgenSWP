@@ -26,10 +26,8 @@ public class GUIMitarbeiter implements ActionListener{
 	JButton btnZurück = new JButton();
 	JButton btnAnmelden = new JButton();
 	public JComboBox comboBoxArtikelHerren = new JComboBox();
-	private JComboBox comboBoxErweitert;
 	public JComboBox comboBoxArtikelDamen = new JComboBox();
 	public JComboBox comboBoxAnmelden = new JComboBox();
-	public JPanel panelEinstellungen = new JPanel();
 	public String[] anmeldenCbList;
 	public String[] damenCbList = {"Damen", "-----------------------------------", "Kleidung", "Schuhe", "Accessoires"};
 	public String[] herrenCbList = {"Herren","------------------------------------", "Kleidung", "Schuhe", "Accessoires"};
@@ -82,13 +80,6 @@ public class GUIMitarbeiter implements ActionListener{
 		frame.getContentPane().add(panelBar);
 		panelBar.setLayout(null);
 		
-		comboBoxErweitert = new JComboBox();
-		comboBoxErweitert.setFont(new Font("Lucida Bright", Font.BOLD, 15));
-		comboBoxErweitert.setBackground(SystemColor.control);
-		comboBoxErweitert.setBounds(801, 0, 220, 50);
-		comboBoxErweitert.addActionListener(this);
-		panelBar.add(comboBoxErweitert);
-		
 		comboBoxAnmelden = new JComboBox(anmeldenCbList);
 		comboBoxAnmelden.setBounds(1040, 0, 173, 50);
 		comboBoxAnmelden.setFont(new Font("Lucida Bright", Font.BOLD, 15));
@@ -102,69 +93,6 @@ public class GUIMitarbeiter implements ActionListener{
 		panelMain.setBounds(0, 147, 1234, 563);
 		frame.getContentPane().add(panelMain);
 		panelMain.setLayout(null);
-		
-		//Artikelfenster (Links)
-		JPanel panelScrollPaneArtikel = new JPanel();
-		panelScrollPaneArtikel.setBackground(SystemColor.control);
-		panelScrollPaneArtikel.setLayout(null);
-		
-		JScrollPane scrollPaneArtikel = new JScrollPane(panelScrollPaneArtikel);
-		scrollPaneArtikel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPaneArtikel.setBounds(10, 97, 270, 455);
-		panelMain.add(scrollPaneArtikel);
-	
-		
-		comboBoxArtikelDamen = new JComboBox(damenCbList);
-		comboBoxArtikelDamen.setBackground(SystemColor.control);
-		comboBoxArtikelDamen.setFont(new Font("Lucida Bright", Font.BOLD, 15));
-		comboBoxArtikelDamen.setBounds(10, 86, 248, 43);
-		panelScrollPaneArtikel.add(comboBoxArtikelDamen);
-		
-		comboBoxArtikelHerren = new JComboBox(herrenCbList);
-		comboBoxArtikelHerren.setBackground(SystemColor.control);
-		comboBoxArtikelHerren.setFont(new Font("Lucida Bright", Font.BOLD, 15));
-		comboBoxArtikelHerren.addActionListener(this);
-		comboBoxArtikelHerren.setBounds(10, 236, 248, 43);
-		panelScrollPaneArtikel.add(comboBoxArtikelHerren);
-
-		
-		
-		//Einstellungsfenster (Mitte)
-		
-		panelEinstellungen.setPreferredSize(new Dimension(549, 2000));
-		JScrollPane scrollPaneEinstellungen = new JScrollPane(panelEinstellungen);
-		scrollPaneEinstellungen.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		panelEinstellungen.setLayout(null);
-		
-		
-		
-		scrollPaneEinstellungen.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPaneEinstellungen.setBounds(343, 97, 549, 455);
-		panelMain.add(scrollPaneEinstellungen);
-		
-		
-		//Mitarbeiterfenster (Rechts)
-		JPanel panelMitarbeiter = new JPanel();
-		
-		JScrollPane scrollPaneMitarbeiter = new JScrollPane(panelMitarbeiter);
-		panelMitarbeiter.setLayout(null);
-		
-		JButton btnHinzMitarbeiter = new JButton("Hinzuf\u00FCgen");
-		btnHinzMitarbeiter.setBackground(SystemColor.control);
-		btnHinzMitarbeiter.setBounds(10, 11, 114, 34);
-		panelMitarbeiter.add(btnHinzMitarbeiter);
-		
-		JButton btnEntfernenMitarbeiter = new JButton("Entfernen");
-		btnEntfernenMitarbeiter.setBackground(SystemColor.control);
-		btnEntfernenMitarbeiter.setBounds(144, 11, 114, 34);
-		panelMitarbeiter.add(btnEntfernenMitarbeiter);
-		
-		JList listMitarbeiter = new JList();
-		listMitarbeiter.setBounds(10, 78, 248, 324);
-		panelMitarbeiter.add(listMitarbeiter);
-		scrollPaneMitarbeiter.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPaneMitarbeiter.setBounds(954, 97, 270, 455);
-		panelMain.add(scrollPaneMitarbeiter);
 		
 		
 		frame.setVisible(true);
@@ -286,26 +214,6 @@ public class GUIMitarbeiter implements ActionListener{
 		    
 			if(auswahl == "Kleidung"){
 			
-			 
-		    }
-		  
-			if(auswahl == "Schuhe"){
-			 
-			  
-			}
-			
-			if(auswahl == "Accessoires"){
-				
-			  
-			}
-		}
-		
-		if(e.getSource() == comboBoxArtikelHerren){
-			
-			String auswahl = (String) comboBoxArtikelHerren.getSelectedItem();
-		    
-			if(auswahl == "Kleidung"){
-				anzeigenArtikel();
 			 
 		    }
 		  
