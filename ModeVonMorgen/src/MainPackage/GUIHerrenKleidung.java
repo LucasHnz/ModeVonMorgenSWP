@@ -28,6 +28,7 @@ public class GUIHerrenKleidung implements ActionListener{
 	public String[] damenCbList;
 	public String[] herrenCbList;
 	public String[] anmeldenCbList;
+	public JButton btnZumArtikel = new JButton();
 	public JPanel panelHerrenKleidung = new JPanel();
 	
 
@@ -123,7 +124,7 @@ public class GUIHerrenKleidung implements ActionListener{
 		
 		//Artikelbeispiel
 		JPanel panelArtikel = new JPanel();
-		panelArtikel.setBackground(Color.WHITE);
+		panelArtikel.setBackground(SystemColor.inactiveCaptionBorder);
 		panelArtikel.setBounds(66, 30, 680, 188);
 		panelHerrenKleidung.add(panelArtikel);
 		panelArtikel.setLayout(null);
@@ -150,10 +151,11 @@ public class GUIHerrenKleidung implements ActionListener{
 		lblNewLabel.setBounds(569, 130, 101, 47);
 		panelArtikel.add(lblNewLabel);
 		
-		JButton btnZumArtikel = new JButton("Zum Artikel");
+		btnZumArtikel = new JButton("Zum Artikel");
 		btnZumArtikel.setFont(new Font("Lucida Bright", Font.BOLD, 15));
 		btnZumArtikel.setBackground(Color.WHITE);
 		btnZumArtikel.setBounds(198, 130, 139, 30);
+		btnZumArtikel.addActionListener(this);
 		panelArtikel.add(btnZumArtikel);
 		
 		JLabel lblStatus = new JLabel("Auf Lager");
@@ -233,7 +235,7 @@ public void hinzufügenArtikel() {
 			frame.dispose();
 			new GUI();
 		}
-if(e.getSource() == comboBoxHerren){
+        	if(e.getSource() == comboBoxHerren){
 			
 			String auswahl = (String) comboBoxHerren.getSelectedItem();
 		    
@@ -260,7 +262,7 @@ if(e.getSource() == comboBoxHerren){
 			
 			String auswahl = (String) comboBoxDamen.getSelectedItem();
 			
-			if(auswahl == "Kleidung"){
+				if(auswahl == "Kleidung"){
 				 frame.dispose();
 				 new GUIDamenKleidung(damenCbList, herrenCbList, anmeldenCbList);
 			    }
@@ -294,6 +296,10 @@ if(e.getSource() == comboBoxHerren){
 		    if(auswahl == "Konto verwalten") {
 			    new GUIKontoVerwalten(damenCbList, herrenCbList, anmeldenCbList);
 			}
+		}
+		if(e.getSource() == btnZumArtikel) {
+			System.out.println("Hier");
+			new GUIArtikel(damenCbList, herrenCbList, anmeldenCbList);
 		}
 	}
 }

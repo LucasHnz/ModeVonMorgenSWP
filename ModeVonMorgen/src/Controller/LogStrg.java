@@ -1,6 +1,11 @@
 package Controller;
 
 import java.awt.event.ActionEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.*;
 
@@ -16,23 +21,41 @@ public class LogStrg {
 	static String testMailMitarbeiter = "test";
 	
 	public static  void anmelden(String pwd, String email, String[]anmeldenCbList) {
-		
-	
-		
-	
-		if(email.equals(testEmail) && pwd.equals( testPasswort)) {
-			System.out.println("GUI");
-			GUI.fensterSchlieﬂen();
-			anmeldenCbList[0] = "Jochen";
-			new GUI(anmeldenCbList);
+		try 
+		{
+			Connection con = DriverManager.getConnection(
+					"jdbc:oracle:thin:@aix1.fh-bielefeld.de:1521:d2");
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("select email and passwort from "
+					+ "(Mitarbeiter, Kunden, Bestandskunden, Administrator)");
 			
+			rs.next();
+		
+			String userEmail = rs.getString("email");
+			String userPasswort = rs.getString("passwort");
+			String userName = rs.getString("vorname");
+			
+			if(email.equals(userEmail) && pwd.equals(userPasswort)) {
+				GUI.fensterSchlieﬂen();
+				anmeldenCbList[0] = userName;
+				new GUI(anmeldenCbList);
+				
+			}
+			if(email.equals(testMailMitarbeiter) && pwd.equals(testPwMitarbeiter)) {
+				GUI.fensterSchlieﬂen();
+				anmeldenCbList[0] = "Mitarbeiter";
+				new GUIMitarbeiter(anmeldenCbList);
+			}
+		
+			
+			rs.close();
+			stmt.close();
+			con.close();
+			
+		}catch(SQLException e) {
+                            			
 		}
-		if(email.equals(testMailMitarbeiter) && pwd.equals(testPwMitarbeiter)) {
-			GUI.fensterSchlieﬂen();
-			anmeldenCbList[0] = "Mitarbeiter";
-			new GUIMitarbeiter(anmeldenCbList);
-		}
-	
+
 	
 	}
 }
