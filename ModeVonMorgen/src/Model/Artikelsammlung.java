@@ -63,13 +63,32 @@ public class Artikelsammlung {
 	public static Artikel getArtikel(int Artikelnummer) {
 		return Artikelsammlung.get(Artikelnummer);
 	}
-	public static void hinzufügenArtikel(String typ, int Artikelnummer, int Bestand, String Bezeichnung, String Geschlecht,
+	/**
+	 * Fügt der Artikelsammlung einen neuen Artikel hinzu.
+	 * @param kateg Die Kategorie des Artikels. Also Schuhe, Accessoires oder Kleidung
+	 * @param Artikelnummer 
+	 * @param Bestand
+	 * @param Bezeichnung
+	 * @param Geschlecht
+	 * @param Hersteller
+	 * @param Verfügbarkeit
+	 * @param Notiz
+	 * @param Lieferanten
+	 * @param Preis
+	 * @param Rabatt
+	 * @param Schuhgröße
+	 * @param Farbe
+	 * @param Größe
+	 * @see Model.Artikel Artikel 
+	 * @return 
+	 */
+	public static void hinzufügenArtikel(String kateg, int Artikelnummer, int Bestand, String Bezeichnung, String Geschlecht,
 			String Hersteller, String Verfügbarkeit, String Notiz, String[] Lieferanten, double Preis,
 			double Rabatt, int Schuhgröße, String Farbe, String Größe) {
 		Artikel artikel;
-		if(typ == "Schuhe")
+		if(kateg == "Schuhe")
 			artikel = new Schuhe(Artikelnummer, Bestand, Bezeichnung, Geschlecht, Hersteller, Verfügbarkeit, Notiz, Lieferanten, Preis, Rabatt, Schuhgröße);
-		else if(typ == "Accessoires")
+		else if(kateg == "Accessoires")
 			artikel = new Accessoires(Artikelnummer, Bestand, Bezeichnung, Geschlecht, Hersteller, Verfügbarkeit, Notiz, Lieferanten, Preis, Rabatt, Farbe);
 		else 
 			artikel = new Kleidung(Artikelnummer, Bestand, Bezeichnung, Geschlecht, Hersteller, Verfügbarkeit, Notiz, Lieferanten, Preis, Rabatt, Größe);
