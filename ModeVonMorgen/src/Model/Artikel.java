@@ -7,10 +7,22 @@ package Model;
 public abstract class Artikel {
 
 	protected int Artikelnummer, Bestand;
-	protected String Bezeichnung, Art, Geschlecht, Hersteller, Verfügbarkeit, Notiz;
+	protected String Bezeichnung, Art, Geschlecht, Hersteller, Verfügbarkeit, Notiz, Kategorie;
 	protected String[] Lieferanten;
 	protected double Preis, Rabatt;
-	
+	/**
+	 * 
+	 * @param artnr Die einzigartige Artikelnummer.
+	 * @param bestand Der aktuelle Lagerbestand.
+	 * @param Bezeichnung Name des Artikels.
+	 * @param Geschlecht Gibt an, ob der Artikel für Frauen oder Männer gedacht ist.
+	 * @param Hersteller Die MArke des Artikels.
+	 * @param Verfügbarkeit Die Lieferbarkeit.
+	 * @param Notiz Eine nur in der Artikelverwaltung sichtbare Notiz.
+	 * @param Lieferanten Die Namen aller Lieferanten, die einen Artikel liefern.
+	 * @param Preis Der Preis des Artikels.
+	 * @param Rabatt Temporäre Preisvergünstigung.
+	 */
 	public Artikel(int artnr, int bestand, String Bezeichnung, String Geschlecht, String Hersteller, String Verfügbarkeit, String Notiz, String[]  Lieferanten, double Preis, double Rabatt) {
 
 		this.Artikelnummer=artnr;
@@ -90,6 +102,9 @@ public abstract class Artikel {
 	}
 	public void setRabatt(double rabatt) {
 		Rabatt = rabatt;
+	}
+	public String getKategorie() {
+		return Kategorie;
 	}
 	
 	

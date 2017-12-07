@@ -18,7 +18,7 @@ public class Artikelsammlung {
 	
 	public Artikelsammlung() {	}
 	
-	public static void füllenSammlung(ResultSet rs, String typ) {
+	public static void füllenSammlung(ResultSet rs, String kateg) {
 		try{
 			while(rs.next()){
 		
@@ -36,13 +36,13 @@ public class Artikelsammlung {
 				int Schuhgröße;
 				String Farbe, Größe;
 			
-				if(typ == "Schuhe") {
+				if(kateg == "Schuhe") {
 					Schuhgröße = rs.getInt("Schuhgröße");
 					Artikelsammlung.put(Artikelnummer, new Schuhe(Artikelnummer, Bestand, Bezeichnung, Geschlecht, Hersteller, Verfügbarkeit, Notiz, Lieferanten, Preis, Rabatt, Schuhgröße));
-				}else if(typ == "Accessoires") {
+				}else if(kateg == "Accessoires") {
 					Farbe = rs.getString("Farbe");
 					Artikelsammlung.put(Artikelnummer, new Accessoires(Artikelnummer, Bestand, Bezeichnung, Geschlecht, Hersteller, Verfügbarkeit, Notiz, Lieferanten, Preis, Rabatt, Farbe));
-				}else if(typ == "Kleidung") {
+				}else if(kateg == "Kleidung") {
 					Größe = rs.getString("Größe");
 					Artikelsammlung.put(Artikelnummer, new Kleidung(Artikelnummer, Bestand, Bezeichnung, Geschlecht, Hersteller, Verfügbarkeit, Notiz, Lieferanten, Preis, Rabatt, Größe));
 				}	
